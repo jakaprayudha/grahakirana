@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+<!--begin::Head-->
 <?php
 require 'template/head.php';
 ?>
+<!--end::Head-->
+<!--begin::Body-->
 
 <body data-kt-name="metronic" id="kt_body" class="app-blank bgi-size-cover bgi-position-center bgi-no-repeat">
 	<!--begin::Theme mode setup on page load-->
@@ -36,7 +39,7 @@ require 'template/head.php';
 			}
 		</style>
 		<!--end::Page bg image-->
-		<!--begin::Authentication - Sign-in -->
+		<!--begin::Authentication - Password reset -->
 		<div class="d-flex flex-column flex-lg-row flex-column-fluid">
 			<!--begin::Aside-->
 			<?php
@@ -50,82 +53,37 @@ require 'template/head.php';
 					<!--begin::Content-->
 					<div class="w-md-400px">
 						<!--begin::Form-->
-						<form class="form w-100" novalidate="novalidate" id="kt_sign_in_form" data-kt-redirect-url="../../demo3/dist/index.html" action="#">
+						<form class="form w-100" novalidate="novalidate" id="kt_password_reset_form" data-kt-redirect-url="../../demo3/dist/authentication/layouts/overlay/new-password.html" action="#">
 							<!--begin::Heading-->
-							<div class="text-center mb-11">
+							<div class="text-center mb-10">
 								<!--begin::Title-->
-								<h1 class="text-dark fw-bolder mb-3">Sign In</h1>
+								<h1 class="text-dark fw-bolder mb-3">Forgot Password ?</h1>
 								<!--end::Title-->
-								<!--begin::Subtitle-->
-								<div class="text-gray-500 fw-semibold fs-6">Your Academics Student</div>
-								<!--end::Subtitle=-->
+								<!--begin::Link-->
+								<div class="text-gray-500 fw-semibold fs-6">Enter your email to reset your password.</div>
+								<!--end::Link-->
 							</div>
 							<!--begin::Heading-->
-							<!--begin::Login options-->
-							<div class="row g-3 mb-9">
-								<!--begin::Col-->
-								<div class="col-md-6">
-									<!--begin::Google link=-->
-									<a href="#" class="btn btn-flex btn-outline btn-text-gray-700 btn-active-color-primary bg-state-light flex-center text-nowrap w-100">
-										<img alt="Logo" src="assets/media/svg/brand-logos/google-icon.svg" class="h-15px me-3" />Sign in with Google</a>
-									<!--end::Google link=-->
-								</div>
-								<!--end::Col-->
-								<!--begin::Col-->
-								<div class="col-md-6">
-									<!--begin::Google link=-->
-									<a href="#" class="btn btn-flex btn-outline btn-text-gray-700 btn-active-color-primary bg-state-light flex-center text-nowrap w-100">
-										<img alt="Logo" src="assets/media/svg/brand-logos/apple-black.svg" class="theme-light-show h-15px me-3" />
-										<img alt="Logo" src="assets/media/svg/brand-logos/apple-black-dark.svg" class="theme-dark-show h-15px me-3" />Sign in with Apple</a>
-									<!--end::Google link=-->
-								</div>
-								<!--end::Col-->
-							</div>
-							<!--end::Login options-->
-							<!--begin::Separator-->
-							<div class="separator separator-content my-14">
-								<span class="w-125px text-gray-500 fw-semibold fs-7">Or with email</span>
-							</div>
-							<!--end::Separator-->
 							<!--begin::Input group=-->
 							<div class="fv-row mb-8">
 								<!--begin::Email-->
 								<input type="text" placeholder="Email" name="email" autocomplete="off" class="form-control bg-transparent" />
 								<!--end::Email-->
 							</div>
-							<!--end::Input group=-->
-							<div class="fv-row mb-3">
-								<!--begin::Password-->
-								<input type="password" placeholder="Password" name="password" autocomplete="off" class="form-control bg-transparent" />
-								<!--end::Password-->
-							</div>
-							<!--end::Input group=-->
-							<!--begin::Wrapper-->
-							<div class="d-flex flex-stack flex-wrap gap-3 fs-base fw-semibold mb-8">
-								<div></div>
-								<!--begin::Link-->
-								<a href="reset" class="link-primary">Forgot Password ?</a>
-								<!--end::Link-->
-							</div>
-							<!--end::Wrapper-->
-							<!--begin::Submit button-->
-							<div class="d-grid mb-10">
-								<button type="submit" id="kt_sign_in_submit" class="btn btn-primary">
+							<!--begin::Actions-->
+							<div class="d-flex flex-wrap justify-content-center pb-lg-0">
+								<button type="button" id="kt_password_reset_submit" class="btn btn-primary me-4">
 									<!--begin::Indicator label-->
-									<span class="indicator-label">Sign In</span>
+									<span class="indicator-label">Submit</span>
 									<!--end::Indicator label-->
 									<!--begin::Indicator progress-->
 									<span class="indicator-progress">Please wait...
 										<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
 									<!--end::Indicator progress-->
 								</button>
+								<a href="index" class="btn btn-light">Cancel</a>
 							</div>
-							<!--end::Submit button-->
-							<!--begin::Sign up-->
-							<div class="text-gray-500 text-center fw-semibold fs-6">Not a Student Registration?
-								<a href="signup" class="link-primary">Sign up</a>
-							</div>
-							<!--end::Sign up-->
+							<!--end::Actions-->
 						</form>
 						<!--end::Form-->
 					</div>
@@ -135,7 +93,7 @@ require 'template/head.php';
 			</div>
 			<!--end::Body-->
 		</div>
-		<!--end::Authentication - Sign-in-->
+		<!--end::Authentication - Password reset-->
 	</div>
 	<!--end::Root-->
 	<!--end::Main-->
@@ -148,7 +106,7 @@ require 'template/head.php';
 	<script src="assets/js/scripts.bundle.js"></script>
 	<!--end::Global Javascript Bundle-->
 	<!--begin::Custom Javascript(used by this page)-->
-	<script src="assets/js/custom/authentication/sign-in/general.js"></script>
+	<script src="assets/js/custom/authentication/reset-password/reset-password.js"></script>
 	<!--end::Custom Javascript-->
 	<!--end::Javascript-->
 </body>

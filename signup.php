@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+<!--begin::Head-->
 <?php
 require 'template/head.php';
 ?>
+<!--end::Head-->
+<!--begin::Body-->
 
 <body data-kt-name="metronic" id="kt_body" class="app-blank bgi-size-cover bgi-position-center bgi-no-repeat">
 	<!--begin::Theme mode setup on page load-->
@@ -36,7 +39,7 @@ require 'template/head.php';
 			}
 		</style>
 		<!--end::Page bg image-->
-		<!--begin::Authentication - Sign-in -->
+		<!--begin::Authentication - Sign-up -->
 		<div class="d-flex flex-column flex-lg-row flex-column-fluid">
 			<!--begin::Aside-->
 			<?php
@@ -50,14 +53,14 @@ require 'template/head.php';
 					<!--begin::Content-->
 					<div class="w-md-400px">
 						<!--begin::Form-->
-						<form class="form w-100" novalidate="novalidate" id="kt_sign_in_form" data-kt-redirect-url="../../demo3/dist/index.html" action="#">
+						<form class="form w-100" novalidate="novalidate" id="kt_sign_up_form" data-kt-redirect-url="../../demo3/dist/authentication/layouts/overlay/sign-in.html" action="#">
 							<!--begin::Heading-->
 							<div class="text-center mb-11">
 								<!--begin::Title-->
-								<h1 class="text-dark fw-bolder mb-3">Sign In</h1>
+								<h1 class="text-dark fw-bolder mb-3">Sign Up</h1>
 								<!--end::Title-->
 								<!--begin::Subtitle-->
-								<div class="text-gray-500 fw-semibold fs-6">Your Academics Student</div>
+								<div class="text-gray-500 fw-semibold fs-6">Your Social Campaigns</div>
 								<!--end::Subtitle=-->
 							</div>
 							<!--begin::Heading-->
@@ -93,26 +96,55 @@ require 'template/head.php';
 								<input type="text" placeholder="Email" name="email" autocomplete="off" class="form-control bg-transparent" />
 								<!--end::Email-->
 							</div>
-							<!--end::Input group=-->
-							<div class="fv-row mb-3">
-								<!--begin::Password-->
-								<input type="password" placeholder="Password" name="password" autocomplete="off" class="form-control bg-transparent" />
-								<!--end::Password-->
+							<!--begin::Input group-->
+							<div class="fv-row mb-8" data-kt-password-meter="true">
+								<!--begin::Wrapper-->
+								<div class="mb-1">
+									<!--begin::Input wrapper-->
+									<div class="position-relative mb-3">
+										<input class="form-control bg-transparent" type="password" placeholder="Password" name="password" autocomplete="off" />
+										<span class="btn btn-sm btn-icon position-absolute translate-middle top-50 end-0 me-n2" data-kt-password-meter-control="visibility">
+											<i class="bi bi-eye-slash fs-2"></i>
+											<i class="bi bi-eye fs-2 d-none"></i>
+										</span>
+									</div>
+									<!--end::Input wrapper-->
+									<!--begin::Meter-->
+									<div class="d-flex align-items-center mb-3" data-kt-password-meter-control="highlight">
+										<div class="flex-grow-1 bg-secondary bg-active-success rounded h-5px me-2"></div>
+										<div class="flex-grow-1 bg-secondary bg-active-success rounded h-5px me-2"></div>
+										<div class="flex-grow-1 bg-secondary bg-active-success rounded h-5px me-2"></div>
+										<div class="flex-grow-1 bg-secondary bg-active-success rounded h-5px"></div>
+									</div>
+									<!--end::Meter-->
+								</div>
+								<!--end::Wrapper-->
+								<!--begin::Hint-->
+								<div class="text-muted">Use 8 or more characters with a mix of letters, numbers &amp; symbols.</div>
+								<!--end::Hint-->
 							</div>
 							<!--end::Input group=-->
-							<!--begin::Wrapper-->
-							<div class="d-flex flex-stack flex-wrap gap-3 fs-base fw-semibold mb-8">
-								<div></div>
-								<!--begin::Link-->
-								<a href="reset" class="link-primary">Forgot Password ?</a>
-								<!--end::Link-->
+							<!--end::Input group=-->
+							<div class="fv-row mb-8">
+								<!--begin::Repeat Password-->
+								<input placeholder="Repeat Password" name="confirm-password" type="password" autocomplete="off" class="form-control bg-transparent" />
+								<!--end::Repeat Password-->
 							</div>
-							<!--end::Wrapper-->
+							<!--end::Input group=-->
+							<!--begin::Accept-->
+							<div class="fv-row mb-8">
+								<label class="form-check form-check-inline">
+									<input class="form-check-input" type="checkbox" name="toc" value="1" />
+									<span class="form-check-label fw-semibold text-gray-700 fs-base ms-1">I Accept the
+										<a href="#" class="ms-1 link-primary">Terms</a></span>
+								</label>
+							</div>
+							<!--end::Accept-->
 							<!--begin::Submit button-->
 							<div class="d-grid mb-10">
-								<button type="submit" id="kt_sign_in_submit" class="btn btn-primary">
+								<button type="submit" id="kt_sign_up_submit" class="btn btn-primary">
 									<!--begin::Indicator label-->
-									<span class="indicator-label">Sign In</span>
+									<span class="indicator-label">Sign up</span>
 									<!--end::Indicator label-->
 									<!--begin::Indicator progress-->
 									<span class="indicator-progress">Please wait...
@@ -122,8 +154,8 @@ require 'template/head.php';
 							</div>
 							<!--end::Submit button-->
 							<!--begin::Sign up-->
-							<div class="text-gray-500 text-center fw-semibold fs-6">Not a Student Registration?
-								<a href="signup" class="link-primary">Sign up</a>
+							<div class="text-gray-500 text-center fw-semibold fs-6">Already have an Account?
+								<a href="index" class="link-primary fw-semibold">Sign in</a>
 							</div>
 							<!--end::Sign up-->
 						</form>
@@ -135,7 +167,7 @@ require 'template/head.php';
 			</div>
 			<!--end::Body-->
 		</div>
-		<!--end::Authentication - Sign-in-->
+		<!--end::Authentication - Sign-up-->
 	</div>
 	<!--end::Root-->
 	<!--end::Main-->
@@ -148,7 +180,7 @@ require 'template/head.php';
 	<script src="assets/js/scripts.bundle.js"></script>
 	<!--end::Global Javascript Bundle-->
 	<!--begin::Custom Javascript(used by this page)-->
-	<script src="assets/js/custom/authentication/sign-in/general.js"></script>
+	<script src="assets/js/custom/authentication/sign-up/general.js"></script>
 	<!--end::Custom Javascript-->
 	<!--end::Javascript-->
 </body>
