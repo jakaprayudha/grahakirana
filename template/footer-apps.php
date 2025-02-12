@@ -4,7 +4,7 @@
       <!--begin::Copyright-->
       <div class="text-dark order-2 order-md-1">
          <span class="text-gray-400 fw-semibold me-1">Created by</span>
-         <a href="https://keenthemes.com" target="_blank" class="text-muted text-hover-primary fw-semibold me-2 fs-6">Keenthemes</a>
+         <a href="https://keenthemes.com" target="_blank" class="text-muted text-hover-primary fw-semibold me-2 fs-6">ImZack Developer</a>
       </div>
       <!--end::Copyright-->
       <!--begin::Menu-->
@@ -16,7 +16,7 @@
             <a href="https://devs.keenthemes.com" target="_blank" class="menu-link px-2">Support</a>
          </li>
          <li class="menu-item">
-            <a href="https://1.envato.market/EA4JP" target="_blank" class="menu-link px-2">Purchase</a>
+            <a href="https://1.envato.market/EA4JP" target="_blank" class="menu-link px-2">Help Desk</a>
          </li>
       </ul>
       <!--end::Menu-->

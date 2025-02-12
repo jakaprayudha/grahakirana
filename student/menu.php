@@ -92,7 +92,7 @@ $menu = $url_segments[2] ?? 'index'; // Jika kosong, default ke 'home'
                </div>
                <!--end:Menu item-->
                <!--begin:Menu item-->
-               <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+               <div data-kt-menu-trigger="click" class="menu-item menu-accordion  <?php echo ($menu == "internship" or $menu == "projcets" or $menu == "hki" or $menu == "publication") ? 'here show' : ''; ?>">
                   <!--begin:Menu link-->
                   <span class="menu-link">
                      <span class="menu-bullet">
@@ -107,7 +107,7 @@ $menu = $url_segments[2] ?? 'index'; // Jika kosong, default ke 'home'
                      <!--begin:Menu item-->
                      <div class="menu-item">
                         <!--begin:Menu link-->
-                        <a class="menu-link" href="../../demo3/dist/pages/user-profile/overview.html">
+                        <a class="menu-link <?php echo ($menu == "internship") ? 'active' : ''; ?>" href="student/internship">
                            <span class="menu-bullet">
                               <span class="bullet bullet-dot"></span>
                            </span>
