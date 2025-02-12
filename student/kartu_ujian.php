@@ -59,12 +59,12 @@ require '../template/head-apps.php';
 						<!--begin::Page title-->
 						<div class="page-title d-flex flex-column align-items-start justify-content-center flex-wrap me-lg-2 pb-5 pb-lg-0" data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_content_container', lg: '#kt_header_container'}">
 							<!--begin::Heading-->
-							<h1 class="d-flex flex-column text-dark fw-bold my-0 fs-1">Kartu Hasil Studi</h1>
+							<h1 class="d-flex flex-column text-dark fw-bold my-0 fs-1">Kartu Ujian</h1>
 							<!--end::Heading-->
 							<!--begin::Breadcrumb-->
 							<ul class="breadcrumb breadcrumb-dot fw-semibold fs-base my-1">
 								<li class="breadcrumb-item text-muted">Academic</li>
-								<li class="breadcrumb-item text-dark">KHS</li>
+								<li class="breadcrumb-item text-dark">Kartu Ujian</li>
 							</ul>
 							<!--end::Breadcrumb-->
 						</div>
@@ -1033,7 +1033,7 @@ require '../template/head-apps.php';
 										<!--end::Select2-->
 									</div>
 									<!--begin::Add product-->
-									<a href="../../demo3/dist/apps/ecommerce/catalog/add-product.html" class="btn btn-primary">Add KHS</a>
+									<a href="../../demo3/dist/apps/ecommerce/catalog/add-product.html" class="btn btn-primary">Add Kartu Ujian</a>
 									<!--end::Add product-->
 								</div>
 								<!--end::Card toolbar-->
@@ -1052,13 +1052,11 @@ require '../template/head-apps.php';
 													<input class="form-check-input" type="checkbox" data-kt-check="true" data-kt-check-target="#kt_ecommerce_sales_table .form-check-input" value="1" />
 												</div>
 											</th>
-											<th class="min-w-100px">Kode</th>
-											<th class="min-w-175px">Mata Kuliah</th>
-											<th>Nilai</th>
-											<th>Bobot</th>
-											<th>Kredit</th>
-											<th>Hasil</th>
-											<th>Dosen</th>
+											<th class="min-w-100px">Kategori</th>
+											<th class="min-w-175px">Kelas</th>
+											<th>Periode</th>
+											<th>Status Pembayaran</th>
+											<th>Keterangan</th>
 											<th class="text-end min-w-100px">Actions</th>
 										</tr>
 										<!--end::Table row-->
@@ -1077,7 +1075,7 @@ require '../template/head-apps.php';
 											<!--end::Checkbox-->
 											<!--begin::Order ID=-->
 											<td data-kt-ecommerce-order-filter="order_id">
-												<a href="../../demo3/dist/apps/ecommerce/sales/details.html" class="text-gray-800 text-hover-primary fw-bold">13747</a>
+												<a href="../../demo3/dist/apps/ecommerce/sales/details.html" class="text-gray-800 text-hover-primary fw-bold">UTS</a>
 											</td>
 											<!--end::Order ID=-->
 											<!--begin::Customer=-->
@@ -1086,43 +1084,33 @@ require '../template/head-apps.php';
 													<!--begin:: Avatar -->
 													<div class="symbol symbol-circle symbol-50px overflow-hidden me-3">
 														<a href="../../demo3/dist/apps/user-management/users/view.html">
-															<div class="symbol-label fs-3 bg-light-danger text-danger">MBL1</div>
+															<div class="symbol-label fs-3 bg-light-danger text-danger">2025</div>
 														</a>
 													</div>
 													<!--end::Avatar-->
 													<div class="ms-5">
 														<!--begin::Title-->
-														<a href="javascript:;" class="text-gray-800 text-hover-primary fs-5 fw-bold">Mobile Developer Flutter</a>
+														<a href="javascript:;" class="text-gray-800 text-hover-primary fs-5 fw-bold">5SKA1</a>
 														<!--end::Title-->
 													</div>
 												</div>
 											</td>
 											<!--end::Customer=-->
 											<!--begin::Status=-->
-											<td class="text-end pe-0" data-order="Delivering">
+											<td class="text-start pe-0" data-order="Delivering">
 												<!--begin::Badges-->
-												<div class="badge badge-light-success">B</div>
+												<div class="badge badge-light-primary">12 Jan 2024 s/d 18 Jan 2024</div>
 												<!--end::Badges-->
 											</td>
+											<td class="text-start pe-0" data-order="Delivering">
+												<!--begin::Badges-->
+												<div class="badge badge-light-success">Sudah Bayar</div>
+												<!--end::Badges-->
+											</td>
+											<td>-</td>
 											<!--end::Status=-->
-											<!--begin::Total=-->
-											<td class="text-end pe-0">
-												<span class="fw-bold">1</span>
-											</td>
-											<!--end::Total=-->
-											<!--begin::Date Added=-->
-											<td class="text-end" data-order="">
-												<span class="fw-bold">3</span>
-											</td>
-											<td class="text-end" data-order="">
-												<span class="fw-bold">9</span>
-											</td>
 											<!--end::Date Added=-->
 											<!--begin::Date Modified=-->
-											<td class="text-start" data-order="2022-07-13">
-												<div class="badge badge-light-primary">Jaka Prayudha, S.Kom, M.Kom</div>
-											</td>
-											<!--end::Date Modified=-->
 											<!--begin::Action=-->
 											<td class="text-end">
 												<a href="#" class="btn btn-sm btn-light btn-active-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">Actions
@@ -1137,18 +1125,15 @@ require '../template/head-apps.php';
 												<div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-semibold fs-7 w-125px py-4" data-kt-menu="true">
 													<!--begin::Menu item-->
 													<div class="menu-item px-3">
-														<a href="#" class="menu-link px-3">View</a>
+														<a href="student/kartu_ujian_details" class="menu-link px-3">View</a>
 													</div>
 													<!--end::Menu item-->
 													<!--begin::Menu item-->
 													<div class="menu-item px-3">
-														<a href="#" class="menu-link px-3">Edit</a>
+														<a href="#" class="menu-link px-3">Cetak</a>
 													</div>
 													<!--end::Menu item-->
 													<!--begin::Menu item-->
-													<div class="menu-item px-3">
-														<a href="#" class="menu-link px-3" data-kt-ecommerce-order-filter="delete_row">Delete</a>
-													</div>
 													<!--end::Menu item-->
 												</div>
 												<!--end::Menu-->
@@ -1158,9 +1143,6 @@ require '../template/head-apps.php';
 										<!--end::Table row-->
 										<!--begin::Table row-->
 									</tbody>
-									<div class="alert alert-primary" role="alert">
-										Total Indeks Prestasi (IP) : <strong>3.2</strong>
-									</div>
 								</table>
 								<!--end::Table-->
 							</div>
