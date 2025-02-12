@@ -1,3 +1,13 @@
+<?php
+// Ambil path dari URL
+$url_path = trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/');
+
+// Pecah path menjadi array berdasarkan tanda "/"
+$url_segments = explode('/', $url_path);
+
+// Ambil segmen pertama dari URL sebagai menu
+$menu = $url_segments[2] ?? 'index'; // Jika kosong, default ke 'home'
+?>
 <div class="aside-menu flex-column-fluid ps-5 pe-3 mb-9" id="kt_aside_menu">
    <!--begin::Aside Menu-->
    <div class="w-100 hover-scroll-overlay-y d-flex pe-2" id="kt_aside_menu_wrapper" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-height="auto" data-kt-scroll-dependencies="#kt_aside_logo, #kt_aside_footer" data-kt-scroll-wrappers="#kt_aside, #kt_aside_menu, #kt_aside_menu_wrapper" data-kt-scroll-offset="100">
@@ -23,10 +33,20 @@
             <!--end:Menu link-->
             <!--begin:Menu sub-->
             <div class="menu-sub menu-sub-accordion">
+               <div class="menu-item">
+                  <!--begin:Menu link-->
+                  <a class="menu-link <?php echo ($menu == "index") ? 'active' : ''; ?>" href="student/index">
+                     <span class="menu-bullet">
+                        <span class="bullet bullet-dot"></span>
+                     </span>
+                     <span class="menu-title">Profile Mahasiswa</span>
+                  </a>
+                  <!--end:Menu link-->
+               </div>
                <!--begin:Menu item-->
                <div class="menu-item">
                   <!--begin:Menu link-->
-                  <a class="menu-link active" href="../../demo3/dist/index.html">
+                  <a class="menu-link <?php echo ($menu == "krs") ? 'active' : ''; ?>" href="student/krs">
                      <span class="menu-bullet">
                         <span class="bullet bullet-dot"></span>
                      </span>
