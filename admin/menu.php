@@ -35,7 +35,17 @@ $menu = $url_segments[2] ?? 'index'; // Jika kosong, default ke 'home'
             <div class="menu-sub menu-sub-accordion">
                <div class="menu-item">
                   <!--begin:Menu link-->
-                  <a class="menu-link <?php echo ($menu == "index") ? 'active' : ''; ?>" href="student/index">
+                  <a class="menu-link <?php echo ($menu == "index") ? 'active' : ''; ?>" href="admin/index">
+                     <span class="menu-bullet">
+                        <span class="bullet bullet-dot"></span>
+                     </span>
+                     <span class="menu-title">Dashboard</span>
+                  </a>
+                  <!--end:Menu link-->
+               </div>
+               <div class="menu-item">
+                  <!--begin:Menu link-->
+                  <a class="menu-link <?php echo ($menu == "profile_campus") ? 'active' : ''; ?>" href="admin/profile_campus">
                      <span class="menu-bullet">
                         <span class="bullet bullet-dot"></span>
                      </span>
@@ -59,7 +69,7 @@ $menu = $url_segments[2] ?? 'index'; // Jika kosong, default ke 'home'
                      <!--begin:Menu item-->
                      <div class="menu-item">
                         <!--begin:Menu link-->
-                        <a class="menu-link <?php echo ($menu == "internship") ? 'active' : ''; ?>" href="student/internship">
+                        <a class="menu-link <?php echo ($menu == "internship") ? 'active' : ''; ?>" href="admin/internship">
                            <span class="menu-bullet">
                               <span class="bullet bullet-dot"></span>
                            </span>
@@ -71,7 +81,7 @@ $menu = $url_segments[2] ?? 'index'; // Jika kosong, default ke 'home'
                      <!--begin:Menu item-->
                      <div class="menu-item">
                         <!--begin:Menu link-->
-                        <a class="menu-link <?php echo ($menu == "projects") ? 'active' : ''; ?>" href="student/projects">
+                        <a class="menu-link <?php echo ($menu == "projects") ? 'active' : ''; ?>" href="admin/projects">
                            <span class="menu-bullet">
                               <span class="bullet bullet-dot"></span>
                            </span>
@@ -83,7 +93,7 @@ $menu = $url_segments[2] ?? 'index'; // Jika kosong, default ke 'home'
                      <!--begin:Menu item-->
                      <div class="menu-item">
                         <!--begin:Menu link-->
-                        <a class="menu-link <?php echo ($menu == "hki") ? 'active' : ''; ?>" href="student/hki">
+                        <a class="menu-link <?php echo ($menu == "hki") ? 'active' : ''; ?>" href="admin/hki">
                            <span class="menu-bullet">
                               <span class="bullet bullet-dot"></span>
                            </span>
@@ -95,7 +105,7 @@ $menu = $url_segments[2] ?? 'index'; // Jika kosong, default ke 'home'
                      <!--begin:Menu item-->
                      <div class="menu-item">
                         <!--begin:Menu link-->
-                        <a class="menu-link <?php echo ($menu == "publication") ? 'active' : ''; ?>" href="student/publication">
+                        <a class="menu-link <?php echo ($menu == "publication") ? 'active' : ''; ?>" href="admin/publication">
                            <span class="menu-bullet">
                               <span class="bullet bullet-dot"></span>
                            </span>
@@ -105,7 +115,7 @@ $menu = $url_segments[2] ?? 'index'; // Jika kosong, default ke 'home'
                      </div>
                      <div class="menu-item">
                         <!--begin:Menu link-->
-                        <a class="menu-link <?php echo ($menu == "publication") ? 'active' : ''; ?>" href="student/publication">
+                        <a class="menu-link <?php echo ($menu == "publication") ? 'active' : ''; ?>" href="admin/publication">
                            <span class="menu-bullet">
                               <span class="bullet bullet-dot"></span>
                            </span>
@@ -117,7 +127,7 @@ $menu = $url_segments[2] ?? 'index'; // Jika kosong, default ke 'home'
                      <!--begin:Menu item-->
                      <div class="menu-item">
                         <!--begin:Menu link-->
-                        <a class="menu-link <?php echo ($menu == "publication") ? 'active' : ''; ?>" href="student/publication">
+                        <a class="menu-link <?php echo ($menu == "publication") ? 'active' : ''; ?>" href="admin/publication">
                            <span class="menu-bullet">
                               <span class="bullet bullet-dot"></span>
                            </span>
@@ -129,7 +139,7 @@ $menu = $url_segments[2] ?? 'index'; // Jika kosong, default ke 'home'
                      <!--begin:Menu item-->
                      <div class="menu-item">
                         <!--begin:Menu link-->
-                        <a class="menu-link <?php echo ($menu == "publication") ? 'active' : ''; ?>" href="student/publication">
+                        <a class="menu-link <?php echo ($menu == "publication") ? 'active' : ''; ?>" href="admin/publication">
                            <span class="menu-bullet">
                               <span class="bullet bullet-dot"></span>
                            </span>
@@ -158,7 +168,7 @@ $menu = $url_segments[2] ?? 'index'; // Jika kosong, default ke 'home'
                      <!--begin:Menu item-->
                      <div class="menu-item">
                         <!--begin:Menu link-->
-                        <a class="menu-link <?php echo ($menu == "prestasi") ? 'active' : ''; ?>" href="student/prestasi">
+                        <a class="menu-link <?php echo ($menu == "prestasi") ? 'active' : ''; ?>" href="admin/prestasi">
                            <span class="menu-bullet">
                               <span class="bullet bullet-dot"></span>
                            </span>
@@ -170,7 +180,7 @@ $menu = $url_segments[2] ?? 'index'; // Jika kosong, default ke 'home'
                      <!--begin:Menu item-->
                      <div class="menu-item">
                         <!--begin:Menu link-->
-                        <a class="menu-link <?php echo ($menu == "penelitian") ? 'active' : ''; ?>" href="student/penelitian">
+                        <a class="menu-link <?php echo ($menu == "penelitian") ? 'active' : ''; ?>" href="admin/penelitian">
                            <span class="menu-bullet">
                               <span class="bullet bullet-dot"></span>
                            </span>
@@ -185,7 +195,7 @@ $menu = $url_segments[2] ?? 'index'; // Jika kosong, default ke 'home'
                <!--begin:Menu item-->
                <div class="menu-item">
                   <!--begin:Menu link-->
-                  <a class="menu-link <?php echo ($menu == "kritik") ? 'active' : ''; ?>" href="student/kritik">
+                  <a class="menu-link <?php echo ($menu == "kritik") ? 'active' : ''; ?>" href="admin/kritik">
                      <span class="menu-bullet">
                         <span class="bullet bullet-dot"></span>
                      </span>
@@ -195,7 +205,7 @@ $menu = $url_segments[2] ?? 'index'; // Jika kosong, default ke 'home'
                </div>
                <div class="menu-item">
                   <!--begin:Menu link-->
-                  <a class="menu-link <?php echo ($menu == "kegiatan") ? 'active' : ''; ?>" href="student/kegiatan">
+                  <a class="menu-link <?php echo ($menu == "kegiatan") ? 'active' : ''; ?>" href="admin/kegiatan">
                      <span class="menu-bullet">
                         <span class="bullet bullet-dot"></span>
                      </span>
