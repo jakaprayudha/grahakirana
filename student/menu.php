@@ -254,7 +254,7 @@ $menu = $url_segments[2] ?? 'index'; // Jika kosong, default ke 'home'
                </div>
                <div class="menu-item">
                   <!--begin:Menu link-->
-                  <a class="menu-link" href="../../demo3/dist/dashboards/marketing.html">
+                  <a class="menu-link <?php echo ($menu == "kegiatan") ? 'active' : ''; ?>" href="student/kegiatan">
                      <span class="menu-bullet">
                         <span class="bullet bullet-dot"></span>
                      </span>
