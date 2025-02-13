@@ -131,7 +131,7 @@ $menu = $url_segments[2] ?? 'index'; // Jika kosong, default ke 'home'
                      <!--begin:Menu item-->
                      <div class="menu-item">
                         <!--begin:Menu link-->
-                        <a class="menu-link" href="../../demo3/dist/pages/user-profile/campaigns.html">
+                        <a class="menu-link <?php echo ($menu == "hki") ? 'active' : ''; ?>" href="student/hki">
                            <span class="menu-bullet">
                               <span class="bullet bullet-dot"></span>
                            </span>
