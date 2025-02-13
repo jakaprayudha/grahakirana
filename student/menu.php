@@ -289,7 +289,7 @@ $menu = $url_segments[2] ?? 'index'; // Jika kosong, default ke 'home'
             <div class="menu-sub menu-sub-accordion">
                <div class="menu-item">
                   <!--begin:Menu link-->
-                  <a class="menu-link" href="../../demo3/dist/dashboards/marketing.html">
+                  <a class="menu-link" href="javascript:;">
                      <span class="menu-bullet">
                         <span class="bullet bullet-dot"></span>
                      </span>
@@ -299,7 +299,7 @@ $menu = $url_segments[2] ?? 'index'; // Jika kosong, default ke 'home'
                </div>
                <div class="menu-item">
                   <!--begin:Menu link-->
-                  <a class="menu-link" href="../../demo3/dist/dashboards/marketing.html">
+                  <a class="menu-link" href="javascript:;">
                      <span class="menu-bullet">
                         <span class="bullet bullet-dot"></span>
                      </span>
@@ -334,7 +334,7 @@ $menu = $url_segments[2] ?? 'index'; // Jika kosong, default ke 'home'
             <div class="menu-sub menu-sub-accordion">
                <div class="menu-item">
                   <!--begin:Menu link-->
-                  <a class="menu-link" href="../../demo3/dist/dashboards/marketing.html">
+                  <a class="menu-link" href="javascript:;">
                      <span class="menu-bullet">
                         <span class="bullet bullet-dot"></span>
                      </span>
@@ -359,7 +359,7 @@ $menu = $url_segments[2] ?? 'index'; // Jika kosong, default ke 'home'
                      <!--begin:Menu item-->
                      <div class="menu-item">
                         <!--begin:Menu link-->
-                        <a class="menu-link" href="../../demo3/dist/apps/chat/private.html">
+                        <a class="menu-link" href="javascript:;">
                            <span class="menu-bullet">
                               <span class="bullet bullet-dot"></span>
                            </span>
@@ -371,7 +371,7 @@ $menu = $url_segments[2] ?? 'index'; // Jika kosong, default ke 'home'
                      <!--begin:Menu item-->
                      <div class="menu-item">
                         <!--begin:Menu link-->
-                        <a class="menu-link" href="../../demo3/dist/apps/chat/group.html">
+                        <a class="menu-link" href="javascript:;">
                            <span class="menu-bullet">
                               <span class="bullet bullet-dot"></span>
                            </span>
@@ -388,7 +388,7 @@ $menu = $url_segments[2] ?? 'index'; // Jika kosong, default ke 'home'
                <!--begin:Menu item-->
                <div class="menu-item">
                   <!--begin:Menu link-->
-                  <a class="menu-link" href="../../demo3/dist/apps/calendar.html">
+                  <a class="menu-link" href="javascript:;">
                      <span class="menu-bullet">
                         <span class="bullet bullet-dot"></span>
                      </span>
@@ -408,7 +408,7 @@ $menu = $url_segments[2] ?? 'index'; // Jika kosong, default ke 'home'
                </div>
                <div class="menu-item">
                   <!--begin:Menu link-->
-                  <a class="menu-link" href="../../demo3/dist/apps/calendar.html">
+                  <a class="menu-link" href="javascript:;">
                      <span class="menu-bullet">
                         <span class="bullet bullet-dot"></span>
                      </span>
@@ -418,7 +418,7 @@ $menu = $url_segments[2] ?? 'index'; // Jika kosong, default ke 'home'
                </div>
                <div class="menu-item">
                   <!--begin:Menu link-->
-                  <a class="menu-link" href="../../demo3/dist/apps/calendar.html">
+                  <a class="menu-link" href="javascript:;">
                      <span class="menu-bullet">
                         <span class="bullet bullet-dot"></span>
                      </span>
@@ -467,7 +467,7 @@ $menu = $url_segments[2] ?? 'index'; // Jika kosong, default ke 'home'
                      <!--begin:Menu item-->
                      <div class="menu-item">
                         <!--begin:Menu link-->
-                        <a class="menu-link" href="../../demo3/dist/utilities/wizards/horizontal.html">
+                        <a class="menu-link" href="javascript:;">
                            <span class="menu-bullet">
                               <span class="bullet bullet-dot"></span>
                            </span>
@@ -479,7 +479,7 @@ $menu = $url_segments[2] ?? 'index'; // Jika kosong, default ke 'home'
                      <!--begin:Menu item-->
                      <div class="menu-item">
                         <!--begin:Menu link-->
-                        <a class="menu-link" href="../../demo3/dist/utilities/wizards/vertical.html">
+                        <a class="menu-link" href="javascript:;">
                            <span class="menu-bullet">
                               <span class="bullet bullet-dot"></span>
                            </span>
@@ -491,7 +491,7 @@ $menu = $url_segments[2] ?? 'index'; // Jika kosong, default ke 'home'
                      <!--begin:Menu item-->
                      <div class="menu-item">
                         <!--begin:Menu link-->
-                        <a class="menu-link" href="../../demo3/dist/utilities/wizards/two-factor-authentication.html">
+                        <a class="menu-link" href="javascript:;">
                            <span class="menu-bullet">
                               <span class="bullet bullet-dot"></span>
                            </span>
@@ -503,7 +503,7 @@ $menu = $url_segments[2] ?? 'index'; // Jika kosong, default ke 'home'
                      <!--begin:Menu item-->
                      <div class="menu-item">
                         <!--begin:Menu link-->
-                        <a class="menu-link" href="../../demo3/dist/utilities/wizards/create-app.html">
+                        <a class="menu-link" href="javascript:;">
                            <span class="menu-bullet">
                               <span class="bullet bullet-dot"></span>
                            </span>
@@ -532,7 +532,7 @@ $menu = $url_segments[2] ?? 'index'; // Jika kosong, default ke 'home'
                      <!--begin:Menu item-->
                      <div class="menu-item">
                         <!--begin:Menu link-->
-                        <a class="menu-link" href="../../demo3/dist/utilities/search/horizontal.html">
+                        <a class="menu-link" href="javascript:;">
                            <span class="menu-bullet">
                               <span class="bullet bullet-dot"></span>
                            </span>
@@ -544,7 +544,7 @@ $menu = $url_segments[2] ?? 'index'; // Jika kosong, default ke 'home'
                      <!--begin:Menu item-->
                      <div class="menu-item">
                         <!--begin:Menu link-->
-                        <a class="menu-link" href="../../demo3/dist/utilities/search/vertical.html">
+                        <a class="menu-link" href="javascript:;">
                            <span class="menu-bullet">
                               <span class="bullet bullet-dot"></span>
                            </span>
@@ -556,7 +556,7 @@ $menu = $url_segments[2] ?? 'index'; // Jika kosong, default ke 'home'
                   </div>
                   <div class="menu-item">
                      <!--begin:Menu link-->
-                     <a class="menu-link" href="../../demo3/dist/dashboards/marketing.html">
+                     <a class="menu-link" href="javascript:;">
                         <span class="menu-bullet">
                            <span class="bullet bullet-dot"></span>
                         </span>
@@ -566,7 +566,7 @@ $menu = $url_segments[2] ?? 'index'; // Jika kosong, default ke 'home'
                   </div>
                   <div class="menu-item">
                      <!--begin:Menu link-->
-                     <a class="menu-link" href="../../demo3/dist/dashboards/marketing.html">
+                     <a class="menu-link" href="javascript:;">
                         <span class="menu-bullet">
                            <span class="bullet bullet-dot"></span>
                         </span>
@@ -604,7 +604,7 @@ $menu = $url_segments[2] ?? 'index'; // Jika kosong, default ke 'home'
                <!--begin:Menu item-->
                <div class="menu-item">
                   <!--begin:Menu link-->
-                  <a class="menu-link" href="../../demo3/dist/documentation/base/utilities.html" title="Check out over 200 in-house components" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
+                  <a class="menu-link" href="javascript:;" title="Check out over 200 in-house components" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
                      <span class="menu-bullet">
                         <span class="bullet bullet-dot"></span>
                      </span>
@@ -616,7 +616,7 @@ $menu = $url_segments[2] ?? 'index'; // Jika kosong, default ke 'home'
                <!--begin:Menu item-->
                <div class="menu-item">
                   <!--begin:Menu link-->
-                  <a class="menu-link" href="../../demo3/dist/documentation/getting-started.html" title="Check out the complete documentation" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
+                  <a class="menu-link" href="javascript:;" title="Check out the complete documentation" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
                      <span class="menu-bullet">
                         <span class="bullet bullet-dot"></span>
                      </span>
@@ -628,7 +628,7 @@ $menu = $url_segments[2] ?? 'index'; // Jika kosong, default ke 'home'
                <!--begin:Menu item-->
                <div class="menu-item">
                   <!--begin:Menu link-->
-                  <a class="menu-link" href="https://preview.keenthemes.com/metronic8/demo3/layout-builder.html" title="Build your layout and export HTML for server side integration" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
+                  <a class="menu-link" href="javascript:;" title="Build your layout and export HTML for server side integration" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
                      <span class="menu-bullet">
                         <span class="bullet bullet-dot"></span>
                      </span>
@@ -640,7 +640,7 @@ $menu = $url_segments[2] ?? 'index'; // Jika kosong, default ke 'home'
                <!--begin:Menu item-->
                <div class="menu-item">
                   <!--begin:Menu link-->
-                  <a class="menu-link" href="../../demo3/dist/documentation/getting-started/changelog.html">
+                  <a class="menu-link" href="javascript:;">
                      <span class="menu-bullet">
                         <span class="bullet bullet-dot"></span>
                      </span>
@@ -673,10 +673,10 @@ $menu = $url_segments[2] ?? 'index'; // Jika kosong, default ke 'home'
          <!--begin::User info-->
          <div class="ms-2">
             <!--begin::Name-->
-            <a href="#" class="text-gray-800 text-hover-primary fs-6 fw-bold lh-1">Paul Melone</a>
+            <a href="#" class="text-gray-800 text-hover-primary fs-6 fw-bold lh-1">Jaka Prayudha</a>
             <!--end::Name-->
             <!--begin::Major-->
-            <span class="text-muted fw-semibold d-block fs-7 lh-1">Python Dev</span>
+            <span class="text-muted fw-semibold d-block fs-7 lh-1">S1 Sistem Informasi</span>
             <!--end::Major-->
          </div>
          <!--end::User info-->
