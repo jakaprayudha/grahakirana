@@ -1,3 +1,7 @@
+<?php
+require 'controller/auth/signController.php';
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <?php
@@ -50,7 +54,7 @@ require 'template/head.php';
 					<!--begin::Content-->
 					<div class="w-md-400px">
 						<!--begin::Form-->
-						<form class="form w-100" novalidate="novalidate" id="kt_sign_in_form" data-kt-redirect-url="../../demo3/dist/index.html" action="#">
+						<form class="form w-100" id="" action="#" method="POST">
 							<!--begin::Heading-->
 							<div class="text-center mb-11">
 								<!--begin::Title-->
@@ -66,7 +70,7 @@ require 'template/head.php';
 								<!--begin::Col-->
 								<div class="col-md-6">
 									<!--begin::Google link=-->
-									<a href="#" class="btn btn-flex btn-outline btn-text-gray-700 btn-active-color-primary bg-state-light flex-center text-nowrap w-100">
+									<a href="javascript:;" class="btn btn-flex btn-outline btn-text-gray-700 btn-active-color-primary bg-state-light flex-center text-nowrap w-100">
 										<img alt="Logo" src="assets/media/svg/brand-logos/google-icon.svg" class="h-15px me-3" />Sign in with Google</a>
 									<!--end::Google link=-->
 								</div>
@@ -74,7 +78,7 @@ require 'template/head.php';
 								<!--begin::Col-->
 								<div class="col-md-6">
 									<!--begin::Google link=-->
-									<a href="#" class="btn btn-flex btn-outline btn-text-gray-700 btn-active-color-primary bg-state-light flex-center text-nowrap w-100">
+									<a href="javascript:;" class="btn btn-flex btn-outline btn-text-gray-700 btn-active-color-primary bg-state-light flex-center text-nowrap w-100">
 										<img alt="Logo" src="assets/media/svg/brand-logos/apple-black.svg" class="theme-light-show h-15px me-3" />
 										<img alt="Logo" src="assets/media/svg/brand-logos/apple-black-dark.svg" class="theme-dark-show h-15px me-3" />Sign in with Apple</a>
 									<!--end::Google link=-->
@@ -90,13 +94,13 @@ require 'template/head.php';
 							<!--begin::Input group=-->
 							<div class="fv-row mb-8">
 								<!--begin::Email-->
-								<input type="text" placeholder="Email" name="email" autocomplete="off" class="form-control bg-transparent" />
+								<input type="text" placeholder="Email" required name="email" autocomplete="off" class="form-control bg-transparent" />
 								<!--end::Email-->
 							</div>
 							<!--end::Input group=-->
 							<div class="fv-row mb-3">
 								<!--begin::Password-->
-								<input type="password" placeholder="Password" name="password" autocomplete="off" class="form-control bg-transparent" />
+								<input type="password" placeholder="Password" required name="password" autocomplete="off" class="form-control bg-transparent" />
 								<!--end::Password-->
 							</div>
 							<!--end::Input group=-->
@@ -110,7 +114,7 @@ require 'template/head.php';
 							<!--end::Wrapper-->
 							<!--begin::Submit button-->
 							<div class="d-grid mb-10">
-								<button type="submit" id="kt_sign_in_submit" class="btn btn-primary">
+								<button type="submit" id="" name="login" class="btn btn-primary">
 									<!--begin::Indicator label-->
 									<span class="indicator-label">Sign In</span>
 									<!--end::Indicator label-->
@@ -137,12 +141,16 @@ require 'template/head.php';
 		</div>
 		<!--end::Authentication - Sign-in-->
 	</div>
+
 	<!--end::Root-->
 	<!--end::Main-->
 	<!--begin::Javascript-->
 	<script>
 		var hostUrl = "assets/";
 	</script>
+
+
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 	<!--begin::Global Javascript Bundle(used by all pages)-->
 	<script src="assets/plugins/global/plugins.bundle.js"></script>
 	<script src="assets/js/scripts.bundle.js"></script>
@@ -151,7 +159,11 @@ require 'template/head.php';
 	<script src="assets/js/custom/authentication/sign-in/general.js"></script>
 	<!--end::Custom Javascript-->
 	<!--end::Javascript-->
+	<?php
+	require 'template/alert.php';
+	?>
 </body>
 <!--end::Body-->
+
 
 </html>

@@ -1,3 +1,6 @@
+<?php
+require 'controller/auth/resetController.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <!--begin::Head-->
@@ -53,7 +56,7 @@ require 'template/head.php';
 					<!--begin::Content-->
 					<div class="w-md-400px">
 						<!--begin::Form-->
-						<form class="form w-100" novalidate="novalidate" id="kt_password_reset_form" data-kt-redirect-url="../../demo3/dist/authentication/layouts/overlay/new-password.html" action="#">
+						<form class="form w-100" id="" method="POST" action="#">
 							<!--begin::Heading-->
 							<div class="text-center mb-10">
 								<!--begin::Title-->
@@ -72,7 +75,7 @@ require 'template/head.php';
 							</div>
 							<!--begin::Actions-->
 							<div class="d-flex flex-wrap justify-content-center pb-lg-0">
-								<button type="button" id="kt_password_reset_submit" class="btn btn-primary me-4">
+								<button type="submit" name="reset" class="btn btn-primary me-4">
 									<!--begin::Indicator label-->
 									<span class="indicator-label">Submit</span>
 									<!--end::Indicator label-->
@@ -109,6 +112,9 @@ require 'template/head.php';
 	<script src="assets/js/custom/authentication/reset-password/reset-password.js"></script>
 	<!--end::Custom Javascript-->
 	<!--end::Javascript-->
+	<?php
+	require 'template/alert.php';
+	?>
 </body>
 <!--end::Body-->
 
