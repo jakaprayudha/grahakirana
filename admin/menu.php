@@ -54,7 +54,7 @@ $menu = $url_segments[2] ?? 'index'; // Jika kosong, default ke 'home'
                   <!--end:Menu link-->
                </div>
                <!--begin:Menu item-->
-               <div data-kt-menu-trigger="click" class="menu-item menu-accordion  <?php echo ($menu == "internship" or $menu == "projects" or $menu == "hki" or $menu == "publication") ? 'here show' : ''; ?>">
+               <div data-kt-menu-trigger="click" class="menu-item menu-accordion  <?php echo ($menu == "fakultas") ? 'here show' : ''; ?>">
                   <!--begin:Menu link-->
                   <span class="menu-link">
                      <span class="menu-bullet">
@@ -69,7 +69,7 @@ $menu = $url_segments[2] ?? 'index'; // Jika kosong, default ke 'home'
                      <!--begin:Menu item-->
                      <div class="menu-item">
                         <!--begin:Menu link-->
-                        <a class="menu-link <?php echo ($menu == "internship") ? 'active' : ''; ?>" href="admin/internship">
+                        <a class="menu-link <?php echo ($menu == "fakultas") ? 'active' : ''; ?>" href="admin/fakultas">
                            <span class="menu-bullet">
                               <span class="bullet bullet-dot"></span>
                            </span>
