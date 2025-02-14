@@ -54,7 +54,7 @@ $menu = $url_segments[2] ?? 'index'; // Jika kosong, default ke 'home'
                   <!--end:Menu link-->
                </div>
                <!--begin:Menu item-->
-               <div data-kt-menu-trigger="click" class="menu-item menu-accordion  <?php echo ($menu == "fakultas" or $menu == "prodi") ? 'here show' : ''; ?>">
+               <div data-kt-menu-trigger="click" class="menu-item menu-accordion  <?php echo ($menu == "fakultas" or $menu == "prodi" or $menu == "academic_year") ? 'here show' : ''; ?>">
                   <!--begin:Menu link-->
                   <span class="menu-link">
                      <span class="menu-bullet">
@@ -90,6 +90,16 @@ $menu = $url_segments[2] ?? 'index'; // Jika kosong, default ke 'home'
                         <!--end:Menu link-->
                      </div>
                      <!--end:Menu item-->
+                     <div class="menu-item">
+                        <!--begin:Menu link-->
+                        <a class="menu-link <?php echo ($menu == "academic_year") ? 'active' : ''; ?>" href="admin/academic_year">
+                           <span class="menu-bullet">
+                              <span class="bullet bullet-dot"></span>
+                           </span>
+                           <span class="menu-title">Tahun Akademik</span>
+                        </a>
+                        <!--end:Menu link-->
+                     </div>
                      <!--begin:Menu item-->
                      <div class="menu-item">
                         <!--begin:Menu link-->
@@ -113,16 +123,7 @@ $menu = $url_segments[2] ?? 'index'; // Jika kosong, default ke 'home'
                         </a>
                         <!--end:Menu link-->
                      </div>
-                     <div class="menu-item">
-                        <!--begin:Menu link-->
-                        <a class="menu-link <?php echo ($menu == "publication") ? 'active' : ''; ?>" href="admin/publication">
-                           <span class="menu-bullet">
-                              <span class="bullet bullet-dot"></span>
-                           </span>
-                           <span class="menu-title">Tahun Akademik</span>
-                        </a>
-                        <!--end:Menu link-->
-                     </div>
+
                      <!--end:Menu item-->
                      <!--begin:Menu item-->
                      <div class="menu-item">
