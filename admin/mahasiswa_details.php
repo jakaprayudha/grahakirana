@@ -945,7 +945,7 @@ require '../template/head-apps.php';
 																	<label class=" form-label">Nama Ibu</label>
 																	<!--end::Label-->
 																	<!--begin::Input-->
-																	<input type="text" name="ayah" class="form-control mb-2" value="<?= $datastudent['name_mother'] ?>" />
+																	<input type="text" name="ibu" class="form-control mb-2" value="<?= $datastudent['name_mother'] ?>" />
 																	<!--end::Input-->
 																</div>
 															</div>
@@ -983,7 +983,44 @@ require '../template/head-apps.php';
 															<!--end::Input-->
 															<!--end::Description-->
 														</div>
+													</div>
+													<!--end::Card header-->
+												</div>
 
+												<!--begin::Variations-->
+												<div class="card card-flush py-4">
+													<!--begin::Card header-->
+													<div class="card-header">
+														<div class="card-title">
+															<h2>Asal Sekolah</h2>
+														</div>
+													</div>
+													<!--end::Card header-->
+													<!--begin::Card body-->
+													<div class="card-body pt-0">
+														<div class="row">
+															<div class="col">
+																<div class="mb-7 fv-row">
+																	<!--begin::Label-->
+																	<label class=" form-label">Nama Sekolah</label>
+																	<!--end::Label-->
+																	<!--begin::Input-->
+																	<input type="text" name="sekolah" class="form-control mb-2" value="<?= $datastudent['school'] ?>" />
+																	<!--end::Input-->
+																	<!--end::Description-->
+																</div>
+															</div>
+															<div class="col">
+																<div class="mb-7 fv-row">
+																	<!--begin::Label-->
+																	<label class=" form-label">Lulus</label>
+																	<!--end::Label-->
+																	<!--begin::Input-->
+																	<input type="date" name="sekolah_lulus" class="form-control mb-2" value="<?= $datastudent['school_graduate'] ?>" />
+																	<!--end::Input-->
+																</div>
+															</div>
+														</div>
 													</div>
 													<!--end::Card header-->
 												</div>
