@@ -182,7 +182,7 @@ $menu = $url_segments[2] ?? 'index'; // Jika kosong, default ke 'home'
                      <!--begin:Menu item-->
                      <div class="menu-item">
                         <!--begin:Menu link-->
-                        <a class="menu-link <?php echo ($menu == "penelitian") ? 'active' : ''; ?>" href="admin/penelitian">
+                        <a class="menu-link <?php echo ($menu == "ruang_kelas") ? 'active' : ''; ?>" href="admin/ruang_kelas">
                            <span class="menu-bullet">
                               <span class="bullet bullet-dot"></span>
                            </span>
