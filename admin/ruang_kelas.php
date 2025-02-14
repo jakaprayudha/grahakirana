@@ -334,6 +334,7 @@ require '../template/head-apps.php';
 											</th>
 											<th class="min-w-100px">Gedung</th>
 											<th class="min-w-175px">Nama Ruang Kelas</th>
+											<th>Kategori</th>
 											<th>Deskripsi</th>
 											<th class="text-center">Status</th>
 											<th>Create</th>
@@ -365,6 +366,7 @@ require '../template/head-apps.php';
 														<!--end::Title-->
 													</div>
 												</td>
+												<td><?= $data['classroom_category'] ?></td>
 												<td><?= $data['classroom_description'] ?></td>
 												<!--end::Customer=-->
 												<!--end::Date Added=-->
@@ -457,6 +459,18 @@ require '../template/head-apps.php';
 																			<?php foreach ($getgedung as $gedung): ?>
 																				<option value="<?= $gedung['id_building'] ?>"><?= $gedung['building_name'] ?></option>
 																			<?php endforeach ?>
+																		</select>
+																		<!--end::Input-->
+																	</div>
+																	<div class="fv-row mb-7">
+																		<!--begin::Label-->
+																		<label class="required fs-6 fw-semibold mb-2">Ketegori Ruangan</label>
+																		<!--end::Label-->
+																		<!--begin::Input-->
+																		<select name="kategori" required class="form-select form-select-solid" id="">
+																			<option value="<?= $data['classroom_category'] ?>"><?= $data['classroom_category'] ?></option>
+																			<option value="Teori">Teori</option>
+																			<option value="Praktikum">Praktikum</option>
 																		</select>
 																		<!--end::Input-->
 																	</div>
@@ -627,6 +641,18 @@ require '../template/head-apps.php';
 								<?php foreach ($getgedung as $gedung): ?>
 									<option value="<?= $gedung['id_building'] ?>"><?= $gedung['building_name'] ?></option>
 								<?php endforeach ?>
+							</select>
+							<!--end::Input-->
+						</div>
+						<div class="fv-row mb-7">
+							<!--begin::Label-->
+							<label class="required fs-6 fw-semibold mb-2">Ketegori Ruangan</label>
+							<!--end::Label-->
+							<!--begin::Input-->
+							<select name="kategori" required class="form-select form-select-solid" id="">
+								<option value="">PILIH</option>
+								<option value="Teori">Teori</option>
+								<option value="Praktikum">Praktikum</option>
 							</select>
 							<!--end::Input-->
 						</div>

@@ -1019,6 +1019,7 @@ require '../template/head-apps.php';
 											<th class="min-w-100px">Kode</th>
 											<th class="min-w-175px">Nama Gedung</th>
 											<th>Deskripsi</th>
+											<th>Ruang Kelas</th>
 											<th class="text-center">Status</th>
 											<th>Create</th>
 											<th>Update</th>
@@ -1060,6 +1061,11 @@ require '../template/head-apps.php';
 													</div>
 												</td>
 												<td><?= $data['building_description'] ?></td>
+												<?php
+												$classroom = mysqli_query($koneksi, "SELECT * FROM ms_classroom WHERE id_building='$data[id_building]'");
+												$totalclassroom = mysqli_num_rows($classroom);
+												?>
+												<td><?= number_format($totalclassroom) ?></td>
 												<!--end::Customer=-->
 												<!--end::Date Added=-->
 												<!--begin::Date Modified=-->
