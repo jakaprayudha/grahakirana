@@ -1,7 +1,7 @@
 <?php
 require '../controller/auth/viewController.php';
-require '../controller/master/academicYearController.php';
-$getacademicYear = tampildata("SELECT * FROM ms_academic_year ");
+require '../controller/master/dosenController.php';
+$getDosen = tampildata("SELECT * FROM ms_lecture LEFT OUTER JOIN ms_faculty ON ms_lecture.id_faculty = ms_faculty.id_faculty LEFT OUTER JOIN ms_program_study ON ms_lecture.id_program_study = ms_program_study.id_prodi");
 
 ?>
 <!DOCTYPE html>
@@ -65,13 +65,13 @@ require '../template/head-apps.php';
 						<!--begin::Page title-->
 						<div class="page-title d-flex flex-column align-items-start justify-content-center flex-wrap me-lg-2 pb-5 pb-lg-0" data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_content_container', lg: '#kt_header_container'}">
 							<!--begin::Heading-->
-							<h1 class="d-flex flex-column text-dark fw-bold my-0 fs-1">Tahun Akademik</h1>
+							<h1 class="d-flex flex-column text-dark fw-bold my-0 fs-1">Dosen </h1>
 							<!--end::Heading-->
 							<!--begin::Breadcrumb-->
 							<ul class="breadcrumb breadcrumb-dot fw-semibold fs-base my-1">
 								<li class="breadcrumb-item text-muted">Academic</li>
 								<li class="breadcrumb-item text-muted">Master Data</li>
-								<li class="breadcrumb-item text-dark">Tahun Akademik</li>
+								<li class="breadcrumb-item text-dark">Dosen</li>
 							</ul>
 							<!--end::Breadcrumb-->
 						</div>
@@ -313,7 +313,7 @@ require '../template/head-apps.php';
 										<!--end::Select2-->
 									</div>
 									<!--begin::Add product-->
-									<a href="javascript:;" data-bs-toggle="modal" data-bs-target="#modal_add_prodi" class="btn btn-primary">Add Program Studi</a>
+									<a href="javascript:;" data-bs-toggle="modal" data-bs-target="#modal_add_dosen" class="btn btn-primary">Add Dosen</a>
 									<!--end::Add product-->
 								</div>
 								<!--end::Card toolbar-->
@@ -332,7 +332,12 @@ require '../template/head-apps.php';
 													<input class="form-check-input" type="checkbox" data-kt-check="true" data-kt-check-target="#kt_ecommerce_sales_table .form-check-input" value="1" />
 												</div>
 											</th>
-											<th class="min-w-100px">Tahun Akademik</th>
+											<th class="min-w-100px">NIDN</th>
+											<th>Departemant</th>
+											<th class="min-w-175px">Nama Lengkap</th>
+											<th>No.Telepon</th>
+											<th>Email</th>
+											<th>Alamat</th>
 											<th class="text-center">Status</th>
 											<th>Create</th>
 											<th>Update</th>
@@ -344,7 +349,7 @@ require '../template/head-apps.php';
 									<!--begin::Table body-->
 									<tbody class="fw-semibold text-gray-600">
 										<!--begin::Table row-->
-										<?php foreach ($getacademicYear as $data): ?>
+										<?php foreach ($getDosen as $data): ?>
 											<tr>
 												<!--begin::Checkbox-->
 												<td>
@@ -352,13 +357,37 @@ require '../template/head-apps.php';
 														<input class="form-check-input" type="checkbox" value="1" />
 													</div>
 												</td>
+												<!--end::Checkbox-->
 												<!--begin::Order ID=-->
-												<td><?= $data['periode'] ?></td>
+												<td><?= $data['lecture_number'] ?></td>
+												<td><?= $data['faculty_long'] ?> | <?= $data['program_study_long'] ?></td>
 												<!--end::Order ID=-->
+												<!--begin::Customer=-->
+												<td>
+													<div class="d-flex align-items-center">
+														<!--begin:: Avatar -->
+														<div class="symbol symbol-circle symbol-50px overflow-hidden me-3">
+															<a href="javascript:;">
+																<div class="symbol-label fs-3 bg-light-danger text-danger"><?= $data['lecture_initial'] ?></div>
+															</a>
+														</div>
+														<!--end::Avatar-->
+														<div class="ms-5">
+															<!--begin::Title-->
+															<a href="javascript:;" class="text-gray-800 text-hover-primary fs-5 fw-bold"><?= $data['lecture_name'] ?></a>
+															<!--end::Title-->
+														</div>
+													</div>
+												</td>
+												<td><?= $data['lecture_phone_number'] ?></td>
+												<td><?= $data['lecture_mail'] ?></td>
+												<td><?= $data['lecture_address'] ?></td>
+												<!--end::Customer=-->
+												<!--end::Date Added=-->
 												<!--begin::Date Modified=-->
 												<td class="text-center">
 													<?php
-													if ($data['periode_status'] == 1) { ?>
+													if ($data['program_study_status'] == 1) { ?>
 														<div class="badge badge-light-success">Active</div>
 													<?php	} else { ?>
 														<div class="badge badge-light-danger">Inactive</div>
@@ -384,12 +413,12 @@ require '../template/head-apps.php';
 														<!--begin::Menu item-->
 														<!--begin::Menu item-->
 														<div class="menu-item px-3">
-															<a href="javascript:;" data-bs-toggle="modal" data-bs-target="#modal_ubah<?= $data['id_academic_year'] ?>" class="menu-link px-3">Edit</a>
+															<a href="javascript:;" data-bs-toggle="modal" data-bs-target="#modal_ubah<?= $data['id_lecture'] ?>" class="menu-link px-3">Edit</a>
 														</div>
 														<!--end::Menu item-->
 														<!--begin::Menu item-->
 														<div class="menu-item px-3">
-															<a href="javascript:;" data-bs-toggle="modal" data-bs-target="#modal_hapus<?= $data['id_academic_year'] ?>" class="menu-link px-3">Delete</a>
+															<a href="javascript:;" data-bs-toggle="modal" data-bs-target="#modal_hapus<?= $data['id_lecture'] ?>" class="menu-link px-3">Delete</a>
 														</div>
 														<!--end::Menu item-->
 													</div>
@@ -398,7 +427,8 @@ require '../template/head-apps.php';
 												<!--end::Action=-->
 											</tr>
 
-											<div class="modal fade" id="modal_ubah<?= $data['id_academic_year'] ?>" tabindex="-1" aria-hidden="true">
+
+											<div class="modal fade" id="modal_ubah<?= $data['id_lecture'] ?>" tabindex="-1" aria-hidden="true">
 												<!--begin::Modal dialog-->
 												<div class="modal-dialog modal-dialog-centered mw-650px">
 													<!--begin::Modal content-->
@@ -406,14 +436,14 @@ require '../template/head-apps.php';
 														<!--begin::Form-->
 														<form class="form" id="" method="POST">
 															<input type="hidden" name="control" value="update">
-															<input type="hidden" name="id" value="<?= $data['id_academic_year'] ?>">
+															<input type="hidden" name="id" value="<?= $data['id_lecture'] ?>">
 															<!--begin::Modal header-->
-															<div class="modal-header" data-bs-dismiss="modal">
+															<div class="modal-header" id="kt_modal_add_customer_header">
 																<!--begin::Modal title-->
 																<h2 class="fw-bold">Perubahan Data </h2>
 																<!--end::Modal title-->
 																<!--begin::Close-->
-																<div id="kt_modal_add_customer_close" class="btn btn-icon btn-sm btn-active-icon-primary">
+																<div id="" data-bs-dismiss="modal" class="btn btn-icon btn-sm btn-active-icon-primary">
 																	<!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
 																	<span class="svg-icon svg-icon-1">
 																		<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -433,11 +463,89 @@ require '../template/head-apps.php';
 																	<!--begin::Input group-->
 																	<div class="fv-row mb-7">
 																		<!--begin::Label-->
-																		<label class="required fs-6 fw-semibold mb-2">Periode</label>
-																		<i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="Tahun Akademik Example 2024/2025 "></i>
+																		<label class="required fs-6 fw-semibold mb-2">Fakultas</label>
 																		<!--end::Label-->
 																		<!--begin::Input-->
-																		<input type="text" required class="form-control form-control-solid" placeholder="" value="<?= $data['periode'] ?>" name="periode" />
+																		<select name="fakultas" required class="form-select form-select-solid" id="">
+																			<option value="<?= $data['id_faculty'] ?>"><?= $data['faculty_long'] ?></option>
+																			<?php
+																			$getfakultas = tampildata("SELECT * FROM ms_faculty WHERE status=1");
+																			?>
+																			<?php foreach ($getfakultas as $fakultas): ?>
+																				<option value="<?= $fakultas['id_faculty'] ?>"><?= $fakultas['faculty_long'] ?></option>
+																			<?php endforeach ?>
+																		</select>
+																		<!--end::Input-->
+																	</div>
+																	<div class="fv-row mb-7">
+																		<!--begin::Label-->
+																		<label class="required fs-6 fw-semibold mb-2">Program Studi</label>
+																		<!--end::Label-->
+																		<!--begin::Input-->
+																		<select name="program_studi" required class="form-select form-select-solid" id="">
+																			<option value="<?= $data['id_prodi'] ?>"><?= $data['program_study_long'] ?></option>
+																			<?php
+																			$getprodi = tampildata("SELECT * FROM ms_program_study WHERE program_study_status=1");
+																			?>
+																			<?php foreach ($getprodi as $prodi): ?>
+																				<option value="<?= $prodi['id_prodi'] ?>"><?= $prodi['program_study_long'] ?></option>
+																			<?php endforeach ?>
+																		</select>
+																		<!--end::Input-->
+																	</div>
+																	<div class="fv-row mb-7">
+																		<!--begin::Label-->
+																		<label class="required fs-6 fw-semibold mb-2">NIDN</label>
+																		<i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="Apabila Dosen Belum Memiliki NIDN Silahkan Isi Dengan NIK/NIP "></i>
+																		<!--end::Label-->
+																		<!--begin::Input-->
+																		<input type="text" value="<?= $data['lecture_number'] ?>" required class="form-control form-control-solid" placeholder="" name="kode" />
+																		<!--end::Input-->
+																	</div>
+																	<!--end::Input group-->
+																	<!--begin::Input group-->
+																	<div class="fv-row mb-7">
+																		<!--begin::Label-->
+																		<label class="required fs-6 fw-semibold mb-2">Initial</label>
+																		<i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="2 atau 3 Huruf Singkatan Nama Dosen "></i>
+																		<!--end::Label-->
+																		<!--begin::Input-->
+																		<input type="text" require required class="form-control form-control-solid" value="<?= $data['lecture_initial'] ?>" placeholder="" name="inisial" />
+																		<!--end::Input-->
+																	</div>
+																	<div class="fv-row mb-7">
+																		<!--begin::Label-->
+																		<label class="required fs-6 fw-semibold mb-2">Nama Lengkap Beserta Gelar</label>
+																		<!--end::Label-->
+																		<!--begin::Input-->
+																		<input type="text" required class="form-control form-control-solid" placeholder="" value="<?= $data['lecture_name'] ?>" name="nama" />
+																		<!--end::Input-->
+																	</div>
+																	<!--end::Input group-->
+																	<div class="fv-row mb-7">
+																		<!--begin::Label-->
+																		<label class="required fs-6 fw-semibold mb-2">No.Telepon</label>
+																		<!--end::Label-->
+																		<!--begin::Input-->
+																		<input type="text" required class="form-control form-control-solid" placeholder="" value="<?= $data['lecture_phone_number'] ?>" name="telepon" />
+																		<!--end::Input-->
+																	</div>
+																	<div class="fv-row mb-7">
+																		<!--begin::Label-->
+																		<label class="required fs-6 fw-semibold mb-2">Email</label>
+																		<!--end::Label-->
+																		<!--begin::Input-->
+																		<input type="email" required class="form-control form-control-solid" value="<?= $data['lecture_mail'] ?>" placeholder="" name="email" />
+																		<!--end::Input-->
+																	</div>
+																	<!--end::Input group-->
+																	<!--begin::Input group-->
+																	<div class="fv-row mb-15">
+																		<!--begin::Label-->
+																		<label class="fs-6 fw-semibold mb-2">Alamat</label>
+																		<!--end::Label-->
+																		<!--begin::Input-->
+																		<textarea name="alamat" class="form-control form-control-solid" rows="5" id="alamat"><?= $data['lecture_address'] ?></textarea>
 																		<!--end::Input-->
 																	</div>
 																	<!--end::Input group-->
@@ -448,7 +556,7 @@ require '../template/head-apps.php';
 															<!--begin::Modal footer-->
 															<div class="modal-footer flex-center">
 																<!--begin::Button-->
-																<button type="button" data-bs-dismiss="modal" id="" class="btn btn-light me-3">Discard</button>
+																<button type="button" data-bs-dismiss="modal" class="btn btn-light me-3">Discard</button>
 																<!--end::Button-->
 																<!--begin::Button-->
 																<button type="submit" id="" name="submit" class="btn btn-primary">Submit</button>
@@ -462,11 +570,11 @@ require '../template/head-apps.php';
 											</div>
 
 											<!-- Modal Delete -->
-											<div class="modal fade" id="modal_hapus<?= $data['id_academic_year'] ?>" tabindex="-1" aria-hidden="true">
+											<div class="modal fade" id="modal_hapus<?= $data['id_lecture'] ?>" tabindex="-1" aria-hidden="true">
 												<div class="modal-dialog modal-dialog-centered">
 													<form action="" method="POST">
 														<input type="hidden" name="control" value="delete">
-														<input type="hidden" name="id" value="<?= $data['id_academic_year'] ?>">
+														<input type="hidden" name="id" value="<?= $data['id_lecture'] ?>">
 														<div class="modal-content">
 															<!-- Modal Header -->
 															<div class="modal-header">
@@ -475,8 +583,8 @@ require '../template/head-apps.php';
 															</div>
 															<!-- Modal Body -->
 															<div class="modal-body">
-																<p>Are you sure you want to delete this academic year ?</p>
-																<p class="fw-bold"><?= $data['periode'] ?></p>
+																<p>Are you sure you want to delete this lecture ?</p>
+																<p class="fw-bold"><?= $data['lecture_name'] ?></p>
 															</div>
 															<!-- Modal Footer -->
 															<div class="modal-footer">
@@ -542,7 +650,7 @@ require '../template/head-apps.php';
 	<!--end::Javascript-->
 </body>
 
-<div class="modal fade" id="modal_add_prodi" tabindex="-1" aria-hidden="true">
+<div class="modal fade" id="modal_add_dosen" tabindex="-1" aria-hidden="true">
 	<!--begin::Modal dialog-->
 	<div class="modal-dialog modal-dialog-centered mw-650px">
 		<!--begin::Modal content-->
@@ -576,11 +684,89 @@ require '../template/head-apps.php';
 						<!--begin::Input group-->
 						<div class="fv-row mb-7">
 							<!--begin::Label-->
-							<label class="required fs-6 fw-semibold mb-2">Periode</label>
-							<i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="Tahun Akademik Example : 2022/2023 "></i>
+							<label class="required fs-6 fw-semibold mb-2">Fakultas</label>
 							<!--end::Label-->
 							<!--begin::Input-->
-							<input type="text" required class="form-control form-control-solid" placeholder="" name="periode" />
+							<select name="fakultas" required class="form-select form-select-solid" id="">
+								<option value="">PILIH</option>
+								<?php
+								$getfakultas = tampildata("SELECT * FROM ms_faculty WHERE status=1");
+								?>
+								<?php foreach ($getfakultas as $fakultas): ?>
+									<option value="<?= $fakultas['id_faculty'] ?>"><?= $fakultas['faculty_long'] ?></option>
+								<?php endforeach ?>
+							</select>
+							<!--end::Input-->
+						</div>
+						<div class="fv-row mb-7">
+							<!--begin::Label-->
+							<label class="required fs-6 fw-semibold mb-2">Program Studi</label>
+							<!--end::Label-->
+							<!--begin::Input-->
+							<select name="program_studi" required class="form-select form-select-solid" id="">
+								<option value="">PILIH</option>
+								<?php
+								$getprodi = tampildata("SELECT * FROM ms_program_study WHERE program_study_status=1");
+								?>
+								<?php foreach ($getprodi as $prodi): ?>
+									<option value="<?= $prodi['id_prodi'] ?>"><?= $prodi['program_study_long'] ?></option>
+								<?php endforeach ?>
+							</select>
+							<!--end::Input-->
+						</div>
+						<div class="fv-row mb-7">
+							<!--begin::Label-->
+							<label class="required fs-6 fw-semibold mb-2">NIDN</label>
+							<i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="Apabila Dosen Belum Memiliki NIDN Silahkan Isi Dengan NIK/NIP "></i>
+							<!--end::Label-->
+							<!--begin::Input-->
+							<input type="text" required class="form-control form-control-solid" placeholder="" name="kode" />
+							<!--end::Input-->
+						</div>
+						<!--end::Input group-->
+						<!--begin::Input group-->
+						<div class="fv-row mb-7">
+							<!--begin::Label-->
+							<label class="required fs-6 fw-semibold mb-2">Initial</label>
+							<i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="2 atau 3 Huruf Singkatan Nama Dosen "></i>
+							<!--end::Label-->
+							<!--begin::Input-->
+							<input type="text" require required class="form-control form-control-solid" placeholder="" name="inisial" />
+							<!--end::Input-->
+						</div>
+						<div class="fv-row mb-7">
+							<!--begin::Label-->
+							<label class="required fs-6 fw-semibold mb-2">Nama Lengkap Beserta Gelar</label>
+							<!--end::Label-->
+							<!--begin::Input-->
+							<input type="text" required class="form-control form-control-solid" placeholder="" name="nama" />
+							<!--end::Input-->
+						</div>
+						<!--end::Input group-->
+						<div class="fv-row mb-7">
+							<!--begin::Label-->
+							<label class="required fs-6 fw-semibold mb-2">No.Telepon</label>
+							<!--end::Label-->
+							<!--begin::Input-->
+							<input type="tel" required class="form-control form-control-solid" placeholder="" name="telepon" />
+							<!--end::Input-->
+						</div>
+						<div class="fv-row mb-7">
+							<!--begin::Label-->
+							<label class="required fs-6 fw-semibold mb-2">Email</label>
+							<!--end::Label-->
+							<!--begin::Input-->
+							<input type="email" required class="form-control form-control-solid" placeholder="" name="email" />
+							<!--end::Input-->
+						</div>
+						<!--end::Input group-->
+						<!--begin::Input group-->
+						<div class="fv-row mb-15">
+							<!--begin::Label-->
+							<label class="fs-6 fw-semibold mb-2">Alamat</label>
+							<!--end::Label-->
+							<!--begin::Input-->
+							<textarea name="alamat" class="form-control form-control-solid" rows="5" id="alamat"></textarea>
 							<!--end::Input-->
 						</div>
 						<!--end::Input group-->
