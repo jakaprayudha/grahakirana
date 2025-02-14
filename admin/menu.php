@@ -14,7 +14,7 @@ $menu = $url_segments[2] ?? 'index'; // Jika kosong, default ke 'home'
       <!--begin::Menu-->
       <div class="menu menu-column menu-rounded menu-sub-indention menu-active-bg fw-semibold my-auto" id="#kt_aside_menu" data-kt-menu="true">
          <!--begin:Menu item-->
-         <div data-kt-menu-trigger="click" class="menu-item here show menu-accordion">
+         <div data-kt-menu-trigger="click" class="menu-item  <?php echo ($menu == "index" or $menu == "profile_campus" or $menu == "fakultas" or $menu == "prodi" or $menu == "academic_year" or $menu == "dosen" or $menu == "tenaga_kependidikan" or $menu == "mata_kuliah" or $menu == "mata_kuliah_details" or $menu == "mahasiswa" or $menu == "mahasiswa_details" or $menu == "kelas" or $menu == "gedung" or $menu == "ruang_kelas") ? 'here show menu-accordion' : ''; ?>" href="admin/index">
             <!--begin:Menu link-->
             <span class="menu-link">
                <span class="menu-icon">
@@ -210,7 +210,7 @@ $menu = $url_segments[2] ?? 'index'; // Jika kosong, default ke 'home'
          </div>
          <!--end:Menu item-->
          <!--begin:Menu item-->
-         <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+         <div data-kt-menu-trigger="click" class="menu-item  <?php echo ($menu == "rak") ? 'here show menu-accordion' : ''; ?>" href="admin/index">
             <!--begin:Menu link-->
             <span class="menu-link">
                <span class="menu-icon">
@@ -231,7 +231,7 @@ $menu = $url_segments[2] ?? 'index'; // Jika kosong, default ke 'home'
             <div class="menu-sub menu-sub-accordion">
                <div class="menu-item">
                   <!--begin:Menu link-->
-                  <a class="menu-link" href="javascript:;">
+                  <a class="menu-link <?php echo ($menu == "rak") ? 'active' : ''; ?>" href="admin/rak">
                      <span class="menu-bullet">
                         <span class="bullet bullet-dot"></span>
                      </span>
