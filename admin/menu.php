@@ -155,7 +155,7 @@ $menu = $url_segments[2] ?? 'index'; // Jika kosong, default ke 'home'
                </div>
                <!--end:Menu item-->
                <!--begin:Menu item-->
-               <div data-kt-menu-trigger="click" class="menu-item menu-accordion  <?php echo ($menu == "prestasi" or $menu == "penelitian" or $menu == "pengabdian" or $menu == "publication_article" or $menu == "sertifikasi" or $menu == "hki_skpi") ? 'here show' : ''; ?>">
+               <div data-kt-menu-trigger="click" class="menu-item menu-accordion  <?php echo ($menu == "gedung" or $menu == "ruang_kelas") ? 'here show' : ''; ?>">
                   <!--begin:Menu link-->
                   <span class="menu-link">
                      <span class="menu-bullet">
@@ -170,7 +170,7 @@ $menu = $url_segments[2] ?? 'index'; // Jika kosong, default ke 'home'
                      <!--begin:Menu item-->
                      <div class="menu-item">
                         <!--begin:Menu link-->
-                        <a class="menu-link <?php echo ($menu == "prestasi") ? 'active' : ''; ?>" href="admin/prestasi">
+                        <a class="menu-link <?php echo ($menu == "gedung") ? 'active' : ''; ?>" href="admin/gedung">
                            <span class="menu-bullet">
                               <span class="bullet bullet-dot"></span>
                            </span>
