@@ -210,7 +210,7 @@ $menu = $url_segments[2] ?? 'index'; // Jika kosong, default ke 'home'
          </div>
          <!--end:Menu item-->
          <!--begin:Menu item-->
-         <div data-kt-menu-trigger="click" class="menu-item  <?php echo ($menu == "rak" or $menu == "kategori_buku") ? 'here show menu-accordion' : ''; ?>" href="admin/index">
+         <div data-kt-menu-trigger="click" class="menu-item  <?php echo ($menu == "rak" or $menu == "kategori_buku" or $menu == "penerbit") ? 'here show menu-accordion' : ''; ?>" href="admin/index">
             <!--begin:Menu link-->
             <span class="menu-link">
                <span class="menu-icon">
@@ -251,7 +251,7 @@ $menu = $url_segments[2] ?? 'index'; // Jika kosong, default ke 'home'
                </div>
                <div class="menu-item">
                   <!--begin:Menu link-->
-                  <a class="menu-link" href="javascript:;">
+                  <a class="menu-link <?php echo ($menu == "penerbit") ? 'active' : ''; ?>" href="admin/penerbit">
                      <span class="menu-bullet">
                         <span class="bullet bullet-dot"></span>
                      </span>
