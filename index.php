@@ -125,8 +125,8 @@ require 'template/head.php';
 							</div>
 							<!--end::Submit button-->
 							<!--begin::Sign up-->
-							<div class="text-gray-500 text-center fw-semibold fs-6">Not a Student Registration?
-								<a href="signup" class="link-primary">Sign up</a>
+							<div class="text-gray-500 text-center fw-semibold fs-6">student ?
+								<a href="signup" class="link-primary">Sign up</a> <br> or prospective new students <a href="registration" class="link-primary">Registration</a>
 							</div>
 							<!--end::Sign up-->
 						</form>
